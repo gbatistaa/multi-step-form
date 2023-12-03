@@ -6,7 +6,9 @@ export default function App() {
 
   return (
     <main className="main-sec">
-      <section id='step-guide-container'><StepsBox number={2} name={stepNames[1]}/></section>
+      <section id='step-guide-container'>
+        {stepNames.map((stepName, index) => <StepsBox number={index + 1} name={stepName}/>)}
+      </section>
       <section id='plan-custom'></section>
     </main>
   );
