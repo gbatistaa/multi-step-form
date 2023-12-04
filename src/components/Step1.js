@@ -47,7 +47,7 @@ export default function Step1() {
                         placeholder='Your name here'
                         autoComplete='off'
                         ref={usernameRef}
-                        style={{border: nameFocus ? '1.5px solid #463dff' : '1.5px solid #d6d9e6'}}
+                        style={{border: nameFocus ? '2px solid #463dff' : '1.5px solid #d6d9e6'}}
                         onFocus={() => setNameFocus(true)}
                         onBlur={() => setNameFocus(false)}
                     />
@@ -60,7 +60,7 @@ export default function Step1() {
                         placeholder='Here is your email'
                         autoComplete='off'
                         ref={emailRef}
-                        style={{border: emailFocus ? '1.5px solid #463dff' : '1.5px solid #d6d9e6'}}
+                        style={{border: emailFocus ? '2px solid #463dff' : '1.5px solid #d6d9e6'}}
                         onFocus={() => setEmailFocus(true)}
                         onBlur={() => setEmailFocus(false)}
                     />
@@ -73,12 +73,12 @@ export default function Step1() {
                         placeholder='And finally your phone'
                         autoComplete='off'
                         ref={phoneRef}
-                        style={{border: phoneFocus ? '1.5px solid #463dff' : '1.5px solid #d6d9e6'}}
+                        style={{border: phoneFocus ? '2px solid #463dff' : '1.5px solid #d6d9e6'}}
                         onFocus={() => setPhoneFocus(true)}
                         onBlur={() => setPhoneFocus(false)}
                     />
                 </div>
-                <button className="next-step-button" type='submit' onClick={(e) => currentStep.setStep(() => 1)}>Next Step</button>
+                <button className="next-step-button" type='submit' onClick={(e) => currentStep.setStep(() => 2)}>Next Step</button>
             </form>
         </>
     )
