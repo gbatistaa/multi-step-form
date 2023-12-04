@@ -1,0 +1,41 @@
+div.step-info-box {
+    height: max-content;
+    display: flex;
+    margin-bottom: 15%;
+}
+
+/* circle number */
+
+div.step-number {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid #fafbff;
+    margin-right: 20px;
+    font-weight: 700;
+}
+
+/* Step intro */
+
+div.step-name {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 6px;
+}
+
+div.step-name p:nth-child(1) {
+    color: #bbbecf;
+    font-size: 0.9rem;
+}
+
+/* Step name */
+
+div.step-name p:nth-child(2) {
+    color: #fafbff;
+    font-weight: 700;
+}
