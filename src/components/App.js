@@ -1,7 +1,8 @@
 import '../css/App.css';
-import Step1 from './Step1';
+//import Step1 from './Step1';
+import Step2 from "./Step2/Step2";
 import StepsBox from './StepsBox';
-import { useState, useContext, createContext } from 'react';
+import { useState, createContext } from 'react';
 
 const StepContext = createContext();
 
@@ -17,7 +18,7 @@ export default function App() {
           {stepNames.map((stepName, index) => <StepsBox number={index + 1} name={stepName} key={index + 1}/>)}
         </section>
         <section id='plan-custom'>
-          <Step1/>
+          <Step2/>
         </section>
       </main>
     </StepContext.Provider>
