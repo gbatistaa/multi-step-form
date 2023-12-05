@@ -6,8 +6,8 @@
 }
 
 main {
-    height: 600px;
-    width: 950px;
+    height: 650px;
+    width: 1000px;
     padding: 2.2%;
     border-radius: 20px;
     display: flex;
@@ -22,14 +22,14 @@ section#step-guide-container {
     padding: 4%;
     border-radius: 8px;
     row-gap: 8px;
-    background-image: url(../assets/images/bg-sidebar-desktop.svg);
+    background-image: url(../images/bg-sidebar-desktop.svg);
     background-position: 50% 100%;
     background-size: cover;
 }
 
 section#plan-custom {
     width: 60%;
-    padding: 4% 5%;
+    padding: 4%;
     border: 1px solid #000000;
 
 }
