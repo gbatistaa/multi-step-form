@@ -1,5 +1,5 @@
 import '../css/App.css';
-//import Step1 from './Step1';
+import Step1 from './Step1';
 import Step2 from "./Step2/Step2";
 import StepsBox from './StepsBox';
 import { useState, createContext } from 'react';
