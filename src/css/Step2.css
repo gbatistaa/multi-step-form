@@ -1,7 +1,132 @@
+@font-face {
+    font-family: 'Ubuntu Bold';
+    src: url(../fonts/Ubuntu-Bold.ttf);
+}
 
+@keyframes yearly {
+    from {left: 0;} 
+    to {left: 65%}
+}
 
-div.user-plan {
-    height: 300px;
-    width: 200px;
-    border: 2px solid rgb(180, 51, 51);
+@keyframes monthly {
+    from {left: 65%;}
+    to {left: 0;}
+}
+
+h1.main-title {
+    font-family: 'Ubuntu Bold';
+    font-size: 2.3rem;
+    color: #032a59;
+    margin-bottom: 2%;
+}
+
+p.step-description {
+    
+    color: #9699ab;
+    font-weight: 400;
+    margin-bottom: 10%;
+}
+
+section.monthly-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+label.user-plan {
+    height: 170px;
+    width: 150px;
+    padding: 3%;
+    border-radius: 8px;
+    border: 1.5px solid #d6d9e6;
+    cursor: pointer;
+    margin-bottom: 7%;
+    transition: 0.2s ease-out;
+}
+
+label.user-plan:hover {
+    border-color: #473dff;
+}
+
+label.user-plan img {
+    margin-bottom: 40%;
+}
+
+div.plan-info-section {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+div.plan-info-section h4 {
+    color: #032a59;
+}
+
+div.plan-info-section p {
+    color: #9699ab;
+    font-size: 0.95rem;
+}
+
+div.monthly-yearly-selection {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0% 30%;
+    background-color: #f0f6ff;
+    margin-bottom: 18.5%;
+}
+
+div.monthly-yearly-selection label{
+    height: 40%;
+    width: 20%;
+    border-radius: 10px;
+    background-color: #032a59;
+    display: flex;
+    align-items: center;
+    padding: 0% 2%;
+    cursor: pointer;
+}
+
+div.monthly-yearly-selection input {
+    height: 0;
+    width: 0;
+}
+
+label div.toggle-ball {
+    height: 12px;
+    width: 12px;
+    border-radius: 50% ;
+    background-color: #ffffff;
+    position: relative;
+    animation: 0.3s linear infinite;
+}
+
+p.periodic-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #032a59;
+}
+
+div.nav-buttons-div {
+    display: flex;
+    height: fit-content;
+    justify-content: space-between;
+}
+
+div.nav-buttons-div button.go-back-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    max-height: 50px;
+    width: 120px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #032a59;
+}
+
+div.nav-buttons-div button.next-step-button {
+    margin-top: 0;
 }
