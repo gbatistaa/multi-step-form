@@ -1,0 +1,80 @@
+label.select-addons {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+label.select-addons.not-selected {
+    border: 1px solid #9699ab;
+    background-color: transparent;
+}
+
+label.select-addons.selected {
+    border: 1px solid #473dff;
+    background-color: #f0f6ff;
+}
+
+label.select-addons input {
+    height: 0;
+    width: 0;
+}
+
+div.addons-check-label {
+    height: 100%;
+    width: 18%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+div.pseudo-checkbox {
+    height: 25px;
+    width: 25px;
+    padding-top: 5%;
+    display: flex;
+    justify-content: center;
+    border-radius: 4px;
+    transition: 0.2s ease-out;
+}
+
+div.pseudo-checkbox.not-selected  {
+    background-color: transparent;
+    border: 1px solid #9699ab;
+}
+
+div.pseudo-checkbox.selected {
+    background-color: #473dff;
+}
+
+div.pseudo-checkbox.selected::after {
+    content: url(../images/check-solid.svg);
+}
+
+div.addons-information {
+    height: 100%;
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 5%;
+}
+
+p.addons-name {
+    font-family: 'Ubuntu';
+    font-weight: 700;
+    color: #02295a;
+}
+
+p.addons-descripttion {
+    font-family: 'Ubuntu';
+    font-size: 0.95rem;
+    color: #9699ab;
+}
+
+p.additional-price-text {
+    color: #473dff;;
+}
