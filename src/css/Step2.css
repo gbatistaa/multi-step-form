@@ -21,7 +21,6 @@ h1.main-title {
 }
 
 p.step-description {
-    
     color: #9699ab;
     font-weight: 400;
     margin-bottom: 10%;
@@ -38,13 +37,13 @@ label.user-plan {
     width: 150px;
     padding: 3%;
     border-radius: 8px;
-    border: 1.5px solid #d6d9e6;
+    border: 1.5px solid;
     cursor: pointer;
     margin-bottom: 7%;
     transition: 0.2s ease-out;
 }
 
-label.user-plan:hover {
+label.not-selected:hover {
     border-color: #473dff;
 }
 
@@ -66,6 +65,7 @@ div.plan-info-section h4 {
 div.plan-info-section p {
     color: #9699ab;
     font-size: 0.95rem;
+    transition: 0.2s ease-out;
 }
 
 div.monthly-yearly-selection {
@@ -107,7 +107,7 @@ label div.toggle-ball {
 p.periodic-name {
     font-weight: 600;
     font-size: 0.9rem;
-    color: #032a59;
+    transition: 0.2s ease-out;
 }
 
 div.nav-buttons-div {
@@ -116,7 +116,7 @@ div.nav-buttons-div {
     justify-content: space-between;
 }
 
-div.nav-buttons-div button.go-back-button {
+div button.go-back-button {
     background-color: transparent;
     border: none;
     cursor: pointer;
