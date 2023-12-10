@@ -86,7 +86,7 @@ export default function Step1() {
         <button
           className="next-step-button"
           type="submit"
-          onClick={(e) => currentStep.setStep(2)}
+          onClick={() => currentStep.setStep(2)}
         >
           Next Step
         </button>
