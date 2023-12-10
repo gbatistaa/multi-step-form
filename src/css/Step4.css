@@ -19,7 +19,6 @@ form.final-form {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 div.bill-components-div {
