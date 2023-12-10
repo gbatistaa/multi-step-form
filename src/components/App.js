@@ -1,7 +1,5 @@
 import "../css/App.css";
-import Step1 from "./Step1";
-import Step2 from "./Step2/Step2";
-import Step3 from "./Step3";
+import ConditionalStep from "./ConditionalStep";
 import StepsBox from "./StepsBox";
 import { useState, createContext } from "react";
 
@@ -9,10 +7,20 @@ const PlanTypeContext = createContext();
 const PeriodicContext = createContext();
 const StepContext = createContext();
 
+// Add-ons contexts:
+
+const OnlineServiceContext = createContext();
+const LargerStorageContext = createContext();
+const CustomizableProfileContext = createContext();
+
 export default function App() {
   const [planState, setPlanState] = useState("");
-  const [periodicState, setPeriodicState] = useState("monthly");
+  const [periodicState, setPeriodicState] = useState("Monthly");
   const [step, setStep] = useState(1);
+  const [onlineServiceState, setOnlineServiceState] = useState(false);
+  const [largerStorageState, setLargeStorageState] = useState(false);
+  const [customizableProfileState, setCustomizableProfileState] =
+    useState(false);
 
   const stepNames = ["YOUR INFO", "SELECT PLAN", "ADD-ONS", "SUMMARY"];
 
@@ -27,7 +35,22 @@ export default function App() {
               ))}
             </section>
             <section id="plan-custom">
-              <Step3 />
+              <OnlineServiceContext.Provider
+                value={{ onlineServiceState, setOnlineServiceState }}
+              >
+                <LargerStorageContext.Provider
+                  value={{ largerStorageState, setLargeStorageState }}
+                >
+                  <CustomizableProfileContext.Provider
+                    value={{
+                      customizableProfileState,
+                      setCustomizableProfileState,
+                    }}
+                  >
+                    <ConditionalStep />
+                  </CustomizableProfileContext.Provider>
+                </LargerStorageContext.Provider>
+              </OnlineServiceContext.Provider>
             </section>
           </main>
         </StepContext.Provider>
@@ -36,4 +59,11 @@ export default function App() {
   );
 }
 
-export { StepContext, PeriodicContext, PlanTypeContext };
+export {
+  StepContext,
+  PeriodicContext,
+  PlanTypeContext,
+  OnlineServiceContext,
+  LargerStorageContext,
+  CustomizableProfileContext,
+};
