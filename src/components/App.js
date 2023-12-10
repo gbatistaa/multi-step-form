@@ -13,6 +13,12 @@ const OnlineServiceContext = createContext();
 const LargerStorageContext = createContext();
 const CustomizableProfileContext = createContext();
 
+const addonsContexts = [
+  OnlineServiceContext,
+  LargerStorageContext,
+  CustomizableProfileContext,
+];
+
 export default function App() {
   const [planState, setPlanState] = useState("");
   const [periodicState, setPeriodicState] = useState("Monthly");
@@ -66,4 +72,5 @@ export {
   OnlineServiceContext,
   LargerStorageContext,
   CustomizableProfileContext,
+  addonsContexts,
 };
