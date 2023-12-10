@@ -1,30 +1,65 @@
 import "../../css/Step4.css";
 import AddonsBill from "../Step4/AddonsBill";
 import { useContext } from "react";
-import { PeriodicContext, PlanTypeContext, StepContext } from "../App.js";
+import {
+  PeriodicContext,
+  PlanTypeContext,
+  StepContext,
+  addonsContexts,
+} from "../App.js";
 
 export default function Step4() {
+  const [OnlineService, LargerStorage, CustomizableProfile] = addonsContexts;
+
+  // Addons Contexts:
+
+  const onlineService = useContext(OnlineService);
+  const largerStorage = useContext(LargerStorage);
+  const customizableProfile = useContext(CustomizableProfile);
+
+  // Global Contexts:
+
   const periodBill = useContext(PeriodicContext);
   const plantype = useContext(PlanTypeContext);
   const step = useContext(StepContext);
 
-  const conditionalBill = () => {
+  // Auxiliar Functions:
+
+  const calculateBruteBill = () => {
     switch (plantype.planState) {
       case "Arcade":
-        if (periodBill.periodicState === "Monthly") return "$9/mo";
-        else return "$108/yr";
+        if (periodBill.periodicState === "Monthly") return 9;
+        else return 108;
 
       case "Advanced":
-        if (periodBill.periodicState === "Monthly") return "$12/mo";
-        else return "$144/yr";
+        if (periodBill.periodicState === "Monthly") return 12;
+        else return 144;
 
       case "Pro":
-        if (periodBill.periodicState === "Monthly") return "$15/mo";
-        else return "$180/yr";
+        if (periodBill.periodicState === "Monthly") return 15;
+        else return 180;
 
       default:
         break;
     }
+  };
+
+  const calculateTotalBill = () => {
+    const bruteBill = calculateBruteBill();
+    const periodcity = periodBill.periodicState;
+
+    // Valor Inicial:
+
+    let totalBill = bruteBill;
+
+    if (onlineService.onlineServiceState)
+      totalBill += periodcity === "Monthly" ? 1 : 12;
+    if (largerStorage.largerStorageState)
+      totalBill += periodcity === "Monthly" ? 2 : 20;
+    if (customizableProfile.customizableProfileState)
+      totalBill += periodcity === "Monthly" ? 2 : 20;
+
+    return totalBill;
   };
 
   const handleSubmit = (event) => {
@@ -43,7 +78,10 @@ export default function Step4() {
             <p className="plantype-period-name">{`${plantype.planState} (${periodBill.periodicState})`}</p>
             <p className="change-plan-settings">Change</p>
           </div>
-          <p className="no-addons-bill">{conditionalBill()}</p>
+          <p className="no-addons-bill">
+            ${calculateBruteBill()}/
+            {periodBill.periodicState === "Monthly" ? "mo" : "yr"}
+          </p>
         </div>
         <div className="addons-bill-div">
           <AddonsBill />
@@ -56,7 +94,10 @@ export default function Step4() {
             periodBill.periodicState === "Monthly" ? "per month" : "per year"
           })`}
         </p>
-        <p className="total-bill">$12/mo</p>
+        <p className="total-bill">
+          ${calculateTotalBill()}/
+          {periodBill.periodicState === "Monthly" ? "mo" : "yr"}
+        </p>
       </div>
       <div className="buttons-div-four">
         <button
