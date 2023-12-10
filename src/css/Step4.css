@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'Ubuntu Bold';
+    src: url(../fonts/Ubuntu-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url(../fonts/Ubuntu-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+form.final-form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+div.bill-components-div {
+    background-color: #f0f6ff;
+    border-radius: 8px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+}
+
+div.periodic-bill-div {
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+div.bill-names {
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+div.addons-bill-div {
+    display: flex;
+    flex-direction: column;
+}
+
+div.addons-bill-info {
+    display: flex;
+    height: 40px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+}
+
+div.addons-bill-info:first-child {
+    margin-top: 15px;
+    border-top: 0.1px solid #9699ab;
+}
+
+p.bill-name {
+    color: #9699ab;
+    font-family: 'Ubuntu';
+    font-weight: 400;
+}
+
+p.addons-price {
+    color: #02295a;
+    font-size: 1.05rem;
+    font-family: 'Ubuntu';
+
+}
+
+p.plantype-period-name {
+    color: #02295a;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+p.change-plan-settings {
+    color: #9699ab;
+}
+
+p.no-addons-bill {
+    color: #02295a;
+    font-family: 'Ubuntu Bold';
+    font-size: 1.1rem;
+}
+
+div.total-bill-div {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0% 5%;
+}
+
+p.total-bill {
+    font-family: 'Ubuntu Bold';
+    font-size: 1.5rem;
+    color: #473dff;
+}
+
+div.buttons-div-four {
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

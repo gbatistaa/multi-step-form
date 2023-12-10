@@ -1,15 +1,31 @@
+form.form-3 {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 label.select-addons {
-    height: 100px;
+    height: 90px;
     width: 100%;
     display: flex;
     align-items: center;
     border-radius: 8px;
+    transition: 0.15s ease-out;
     cursor: pointer;
+}
+
+label.select-addons:nth-child(1),
+label.select-addons:nth-child(2) {
+    margin-bottom: 15px;
 }
 
 label.select-addons.not-selected {
     border: 1px solid #9699ab;
     background-color: transparent;
+}
+
+label.select-addons.not-selected:hover {
+    border-color: #473dff;
 }
 
 label.select-addons.selected {
@@ -38,10 +54,10 @@ div.pseudo-checkbox {
     display: flex;
     justify-content: center;
     border-radius: 4px;
-    transition: 0.2s ease-out;
+    transition: 0.15s ease-out;
 }
 
-div.pseudo-checkbox.not-selected  {
+div.pseudo-checkbox.not-selected {
     background-color: transparent;
     border: 1px solid #9699ab;
 }
@@ -76,5 +92,18 @@ p.addons-descripttion {
 }
 
 p.additional-price-text {
-    color: #473dff;;
+    color: #473dff;
+    ;
+}
+
+button.go-back-button {
+    background-color: transparent;
+}
+
+div.buttons-div {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

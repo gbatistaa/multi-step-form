@@ -18,17 +18,17 @@ function Monthly() {
     <section className="monthly-section">
       <label
         className={
-          PlanType.planState === "arcade"
+          PlanType.planState === "Arcade"
             ? "user-plan"
             : "user-plan not-selected"
         }
         id="arcade-plan"
         htmlFor="check-arcade"
-        onClick={(e) => handleLabelClick(e, "arcade")}
+        onClick={(e) => handleLabelClick(e, "Arcade")}
         style={{
-          borderColor: PlanType.planState === "arcade" ? "#473dff" : "#d6d9e6",
+          borderColor: PlanType.planState === "Arcade" ? "#473dff" : "#d6d9e6",
           backgroundColor:
-            PlanType.planState === "arcade" ? "#f0f6ff" : "transparent",
+            PlanType.planState === "Arcade" ? "#f0f6ff" : "transparent",
         }}
       >
         <input
@@ -40,24 +40,24 @@ function Monthly() {
         <div className="plan-info-section">
           <h4 className="type-plan-title">Arcade</h4>
           <p className="plan-descriprion">
-            {PeriodicBill.periodicState === "monthly" ? "9$/mo" : "108$/yr"}
+            {PeriodicBill.periodicState === "Monthly" ? "9$/mo" : "108$/yr"}
           </p>
         </div>
       </label>
       <label
         className={
-          PlanType.planState === "advanced"
+          PlanType.planState === "Advanced"
             ? "user-plan"
             : "user-plan not-selected"
         }
         id="advanced-plan"
         htmlFor="check-advanced"
-        onClick={(e) => handleLabelClick(e, "advanced")}
+        onClick={(e) => handleLabelClick(e, "Advanced")}
         style={{
           borderColor:
-            PlanType.planState === "advanced" ? "#473dff" : "#d6d9e6",
+            PlanType.planState === "Advanced" ? "#473dff" : "#d6d9e6",
           backgroundColor:
-            PlanType.planState === "advanced" ? "#f0f6ff" : "transparent",
+            PlanType.planState === "Advanced" ? "#f0f6ff" : "transparent",
         }}
       >
         <input
@@ -69,21 +69,21 @@ function Monthly() {
         <div className="plan-info-section">
           <h4 className="type-plan-title">Advanced</h4>
           <p className="plan-descriprion">
-            {PeriodicBill.periodicState === "monthly" ? "12$/mo" : "144$/yr"}
+            {PeriodicBill.periodicState === "Monthly" ? "12$/mo" : "144$/yr"}
           </p>
         </div>
       </label>
       <label
         className={
-          PlanType.planState === "pro" ? "user-plan" : "user-plan not-selected"
+          PlanType.planState === "Pro" ? "user-plan" : "user-plan not-selected"
         }
         id="pro-plan"
         htmlFor="check-pro"
-        onClick={(e) => handleLabelClick(e, "pro")}
+        onClick={(e) => handleLabelClick(e, "Pro")}
         style={{
-          borderColor: PlanType.planState === "pro" ? "#473dff" : "#d6d9e6",
+          borderColor: PlanType.planState === "Pro" ? "#473dff" : "#d6d9e6",
           backgroundColor:
-            PlanType.planState === "pro" ? "#f0f6ff" : "transparent",
+            PlanType.planState === "Pro" ? "#f0f6ff" : "transparent",
         }}
       >
         <input
@@ -95,7 +95,7 @@ function Monthly() {
         <div className="plan-info-section">
           <h4 className="type-plan-title">Pro</h4>
           <p className="plan-descriprion">
-            {PeriodicBill.periodicState === "monthly" ? "15$/mo" : "180$/yr"}
+            {PeriodicBill.periodicState === "Monthly" ? "15$/mo" : "180$/yr"}
           </p>
         </div>
       </label>

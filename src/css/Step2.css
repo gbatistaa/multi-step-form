@@ -4,13 +4,33 @@
 }
 
 @keyframes yearly {
-    from {left: 0;} 
-    to {left: 65%}
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 65%
+    }
 }
 
 @keyframes monthly {
-    from {left: 65%;}
-    to {left: 0;}
+    from {
+        left: 65%;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+form.plan-period-select {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 h1.main-title {
@@ -76,10 +96,10 @@ div.monthly-yearly-selection {
     justify-content: space-between;
     padding: 0% 30%;
     background-color: #f0f6ff;
-    margin-bottom: 18.5%;
+    margin-bottom: 9.15%;
 }
 
-div.monthly-yearly-selection label{
+div.monthly-yearly-selection label {
     height: 40%;
     width: 20%;
     border-radius: 10px;
@@ -98,7 +118,7 @@ div.monthly-yearly-selection input {
 label div.toggle-ball {
     height: 12px;
     width: 12px;
-    border-radius: 50% ;
+    border-radius: 50%;
     background-color: #ffffff;
     position: relative;
     animation: 0.3s linear infinite;
@@ -111,22 +131,25 @@ p.periodic-name {
 }
 
 div.nav-buttons-div {
+    margin-top: auto;
+    width: 100%;
     display: flex;
-    height: fit-content;
+    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
 }
 
 div button.go-back-button {
-    background-color: transparent;
+    height: 50px;
+    width: 120px;
     border: none;
     cursor: pointer;
-    max-height: 50px;
-    width: 120px;
     font-size: 1rem;
     font-weight: 700;
     color: #032a59;
 }
 
-div.nav-buttons-div button.next-step-button {
-    margin-top: 0;
+button {
+    min-height: 50px;
+    max-height: 50px;
 }

@@ -28,8 +28,8 @@ section#step-guide-container {
 }
 
 section#plan-custom {
+    display: flex;
+    flex-direction: column;
     width: 60%;
     padding: 4%;
-    border: 1px solid #000000;
-
 }

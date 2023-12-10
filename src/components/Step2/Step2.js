@@ -2,14 +2,14 @@ import { useState, useContext, useRef } from "react";
 import "../../css/Step2.css";
 import { StepContext } from "../App.js";
 import Monthly from "./Monthly.js";
-import { PlanTypeContext, PeriodicContext } from "../App.js";
+import { PeriodicContext } from "../App.js";
 
 export default function Step2() {
   const isFirstRender = useRef(true);
   const [toggleAnimation, setToggleAnimation] = useState("");
 
   const currentStep = useContext(StepContext);
-  const periodic = useState(PeriodicContext);
+  const periodic = useContext(PeriodicContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -18,15 +18,15 @@ export default function Step2() {
   const handleToggleChange = () => {
     if (!isFirstRender.current) {
       setToggleAnimation(
-        periodic.periodicState === "monthly"
+        periodic.periodicState === "Monthly"
           ? "yearly 0.2s linear forwards"
           : "monthly 0.2s linear forwards"
       );
     }
-    if (periodic.periodicState === "monthly") {
-      periodic.setPeriodicState("yearly");
-    } else if (periodic.periodicState === "yearly") {
-      periodic.setPeriodicState("monthly");
+    if (periodic.periodicState === "Monthly") {
+      periodic.setPeriodicState("Yearly");
+    } else if (periodic.periodicState === "Yearly") {
+      periodic.setPeriodicState("Monthly");
     }
   };
 
@@ -34,7 +34,7 @@ export default function Step2() {
     <>
       <h1 className="main-title">Select your plan</h1>
       <p className="step-description">
-        You have the option of monthly or yearly billing
+        You have the option of monthly or yearly billing.
       </p>
       <form className="plan-period-select" onSubmit={(e) => handleSubmit(e)}>
         <Monthly />
@@ -43,7 +43,7 @@ export default function Step2() {
             className="periodic-name"
             style={{
               color:
-                periodic.periodicState === "monthly" ? "#032a59" : "#9699ab",
+                periodic.periodicState === "Monthly" ? "#032a59" : "#9699ab",
             }}
           >
             Monthly
@@ -66,7 +66,7 @@ export default function Step2() {
             className="periodic-name"
             style={{
               color:
-                periodic.periodicState === "yearly" ? "#032a59" : "#9699ab",
+                periodic.periodicState === "Yearly" ? "#032a59" : "#9699ab",
             }}
           >
             Yearly
