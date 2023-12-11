@@ -3,6 +3,26 @@
     src: url(../fonts/Ubuntu-Bold.ttf);
 }
 
+@keyframes notValidatedInput {
+    from {
+        border: 2px solid #d6d9e6
+    }
+
+    to {
+        border: 2px solid #ed3648;
+    }
+}
+
+@keyframes notValidatedInputLabel {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -41,8 +61,32 @@ div.input-block {
 }
 
 label.input-name {
+    display: flex;
     margin-bottom: 1%;
     color: #032a59;
+}
+
+label.input-name::after {
+    opacity: 0;
+    font-weight: 700;
+    color: #ed3648;
+    margin-left: auto;
+}
+
+label.input-name.not-validated::after {
+    animation: notValidatedInputLabel 0.2s ease-out forwards;
+}
+
+label.input-name.name::after {
+    content: 'Must have name and last name';
+}
+
+label.input-name.email::after {
+    content: 'Email is not in the right format';
+}
+
+label.input-name.phone::after {
+    content: 'Phone number is not in the right format';
 }
 
 input {
@@ -54,10 +98,20 @@ input {
     font-weight: 700;
     color: #032a59;
     border-radius: 8px;
+    border: 1.5px solid #a7abbe;
 }
 
 input::placeholder {
     color: #a7abbe;
+}
+
+input:focus,
+input.not-validated:focus {
+    border: 2px solid #463dff;
+}
+
+input.not-validated {
+    animation: notValidatedInput 0.2s ease-out forwards;
 }
 
 button {
