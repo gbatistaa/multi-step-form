@@ -6,8 +6,8 @@
 }
 
 main {
-    height: 650px;
-    width: 1000px;
+    height: 90%;
+    width: 65%;
     padding: 2.2%;
     border-radius: 20px;
     display: flex;
