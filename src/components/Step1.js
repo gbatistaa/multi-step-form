@@ -1,4 +1,4 @@
-import { useRef, useState, useContext } from "react";
+import { useRef, useState, useContext, useEffect } from "react";
 import { StepContext } from "./App";
 import "../css/Step1.css";
 
@@ -11,12 +11,44 @@ export default function Step1() {
   const emailRef = useRef(null);
   const phoneRef = useRef(null);
 
-  // The focus state of all inputs:
+  // The validation state of all inputs:
 
-  const [nameFocus, setNameFocus] = useState(false);
-  const [emailFocus, setEmailFocus] = useState(false);
-  const [phoneFocus, setPhoneFocus] = useState(false);
+  const [nameValidationError, setNameValidationError] = useState(false);
+  const [emailValidationError, setEmailValidationError] = useState(false);
+  const [phoneValidationError, setPhoneValidationError] = useState(false);
 
+  const [renderCount, setRenderCount] = useState(1);
+
+  // Input validation functions:
+
+  const validateUsername = (name) => {
+    // This validation requires the entered name to have both a first name and a last name:
+
+    const nameComponents = name.split(" ");
+    if (!(nameComponents.length >= 2)) {
+      setNameValidationError(true);
+    } else {
+      setNameValidationError(false);
+    }
+  };
+
+  const validateUserEmail = (email) => {
+    // This validation requires that the email must have its classical shape:
+
+    if (!(email.includes("@") && email.includes(".com"))) {
+      setEmailValidationError(true);
+    } else {
+      setEmailValidationError(false);
+    }
+  };
+
+  const validateUserPhone = (phone) => {
+    if (!(phone.includes("(") && phone.includes(")") && phone.length >= 13)) {
+      setPhoneValidationError(true);
+    } else {
+      setPhoneValidationError(false);
+    }
+  };
   // Function to let react handle the form submit:
 
   const handleSubmit = (event) => {
@@ -28,8 +60,35 @@ export default function Step1() {
       phone: phoneRef.current.value,
     };
 
-    return userInfo;
+    console.log(
+      nameValidationError,
+      emailValidationError,
+      phoneValidationError
+    );
+
+    validateUserPhone(userInfo.phone);
+    validateUsername(userInfo.username);
+    validateUserEmail(userInfo.email);
+
+    setRenderCount(2);
   };
+
+  useEffect(() => {
+    if (
+      renderCount > 1 &&
+      !nameValidationError &&
+      !emailValidationError &&
+      !phoneValidationError
+    ) {
+      currentStep.setStep(2);
+    }
+  }, [
+    renderCount,
+    currentStep,
+    nameValidationError,
+    emailValidationError,
+    phoneValidationError,
+  ]);
 
   return (
     <>
@@ -39,55 +98,57 @@ export default function Step1() {
       </p>
       <form id="personal-info-form" onSubmit={(e) => handleSubmit(e)}>
         <div className="input-block">
-          <label className="input-name">Name</label>
+          <label
+            className={`input-name name${
+              nameValidationError ? " not-validated" : ""
+            }`}
+          >
+            Name
+          </label>
           <input
             type="text"
             name="username"
             placeholder="Your name here"
             autoComplete="off"
             ref={usernameRef}
-            style={{
-              border: nameFocus ? "2px solid #463dff" : "1.5px solid #d6d9e6",
-            }}
-            onFocus={() => setNameFocus(true)}
-            onBlur={() => setNameFocus(false)}
+            className={nameValidationError ? "not-validated" : ""}
           />
         </div>
         <div className="input-block">
-          <label className="input-name">Email</label>
+          <label
+            className={`input-name email${
+              emailValidationError ? " not-validated" : ""
+            }`}
+          >
+            Email
+          </label>
           <input
-            type="email"
+            type="text"
             name="email"
             placeholder="Here is your email"
             autoComplete="off"
             ref={emailRef}
-            style={{
-              border: emailFocus ? "2px solid #463dff" : "1.5px solid #d6d9e6",
-            }}
-            onFocus={() => setEmailFocus(true)}
-            onBlur={() => setEmailFocus(false)}
+            className={emailValidationError ? "not-validated" : ""}
           />
         </div>
         <div className="input-block">
-          <label className="input-name">Phone Number</label>
+          <label
+            className={`input-name phone${
+              phoneValidationError ? " not-validated" : ""
+            }`}
+          >
+            Phone Number
+          </label>
           <input
             type="text"
             name="phone"
             placeholder="And finally your phone"
             autoComplete="off"
             ref={phoneRef}
-            style={{
-              border: phoneFocus ? "2px solid #463dff" : "1.5px solid #d6d9e6",
-            }}
-            onFocus={() => setPhoneFocus(true)}
-            onBlur={() => setPhoneFocus(false)}
+            className={phoneValidationError ? "not-validated" : ""}
           />
         </div>
-        <button
-          className="next-step-button"
-          type="submit"
-          onClick={() => currentStep.setStep(2)}
-        >
+        <button className="next-step-button" type="submit">
           Next Step
         </button>
       </form>
