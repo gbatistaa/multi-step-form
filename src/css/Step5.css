@@ -1,0 +1,22 @@
+img.thank-you-check {
+    height: auto;
+    width: 80px;
+    margin-bottom: 40px;
+}
+
+div.step5 {
+    padding: 3%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p.final-description {
+    margin-top: 20px;
+    text-align: center;
+    line-height: 25px;
+    color: #9699ab;
+}
