@@ -9,19 +9,35 @@
     }
 
     to {
-        left: 65%
+        left: 60%
     }
 }
 
 @keyframes monthly {
     from {
-        left: 65%;
+        left: 60%;
     }
 
     to {
         left: 0;
     }
 }
+
+@keyframes notValidatedLabel {
+
+    0% {
+        border: 1.5px solid #d6d9e6;
+    }
+
+    50% {
+        border: 2px solid #ed3548;
+    }
+
+    100% {
+        border: 1.5px solid #d6d9e6;
+    }
+}
+
 
 * {
     box-sizing: border-box;
@@ -47,9 +63,21 @@ p.step-description {
 }
 
 section.monthly-section {
+    border-radius: 8px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 7%;
+    transition: 0.2s linear;
+}
+
+section.monthly-section.not-validated::before {
+    content: 'Choose your plan to proceed';
+    position: absolute;
+    top: 26.5%;
+    color: #ed3548;
+    opacity: 0;
 }
 
 label.user-plan {
@@ -57,14 +85,28 @@ label.user-plan {
     width: 150px;
     padding: 3%;
     border-radius: 8px;
-    border: 1.5px solid;
     cursor: pointer;
-    margin-bottom: 7%;
     transition: 0.2s ease-out;
 }
 
-label.not-selected:hover {
-    border-color: #473dff;
+label.user-plan.not-validated {
+    animation: notValidatedLabel 1s ease-out;
+    border: 1.5px solid #d6d9e6;
+}
+
+label.user-plan.not-selected {
+    border: 1.5px solid #d6d9e6;
+    background-color: transparent;
+}
+
+label.user-plan.not-selected:hover,
+label.user-plan.not-validated:hover {
+    border: 1.5px solid #473dff;
+}
+
+label.user-plan.selected {
+    border: 1.5px solid #473dff;
+    background-color: #f0f6ff;
 }
 
 label.user-plan img {
