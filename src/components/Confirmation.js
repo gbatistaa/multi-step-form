@@ -1,4 +1,3 @@
-import { useState, useRef, useContext } from "react";
 import thankYou from "../images/icon-thank-you.svg";
 import "../css/Step5.css";
 export default function Confirmation(params) {
