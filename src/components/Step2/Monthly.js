@@ -1,35 +1,42 @@
-import { useContext, memo } from "react";
+import { useContext } from "react";
 import "../../css/Step2.css";
 import { PlanTypeContext, PeriodicContext } from "../App.js";
+import { validationErrorContext } from "./Step2.js";
 import iconArcade from "../../images/icon-arcade.svg";
 import iconAdvanced from "../../images/icon-advanced.svg";
 import iconPro from "../../images/icon-pro.svg";
 
-function Monthly() {
+export default function Monthly() {
+  const validError = useContext(validationErrorContext);
   const PlanType = useContext(PlanTypeContext);
   const PeriodicBill = useContext(PeriodicContext);
+
+  //Validation Error: transforme em contexto e state:
 
   const handleLabelClick = (event, newState) => {
     event.preventDefault();
     PlanType.setPlanState(newState);
+    validError.setValidationError(false);
   };
 
   return (
-    <section className="monthly-section">
+    <section
+      className={`monthly-section${
+        validError.validationError ? " not-validated" : ""
+      }`}
+    >
       <label
-        className={
-          PlanType.planState === "Arcade"
-            ? "user-plan"
-            : "user-plan not-selected"
+        className={`user-plan${
+          validError.validationError
+            ? " not-validated"
+            : `${
+                PlanType.planState === "Arcade" ? " selected" : " not-selected"
+              }`
         }
+        `}
         id="arcade-plan"
         htmlFor="check-arcade"
         onClick={(e) => handleLabelClick(e, "Arcade")}
-        style={{
-          borderColor: PlanType.planState === "Arcade" ? "#473dff" : "#d6d9e6",
-          backgroundColor:
-            PlanType.planState === "Arcade" ? "#f0f6ff" : "transparent",
-        }}
       >
         <input
           type="checkbox"
@@ -45,20 +52,19 @@ function Monthly() {
         </div>
       </label>
       <label
-        className={
-          PlanType.planState === "Advanced"
-            ? "user-plan"
-            : "user-plan not-selected"
+        className={`user-plan${
+          validError.validationError
+            ? " not-validated"
+            : `${
+                PlanType.planState === "Advanced"
+                  ? " selected"
+                  : " not-selected"
+              }`
         }
+        `}
         id="advanced-plan"
         htmlFor="check-advanced"
         onClick={(e) => handleLabelClick(e, "Advanced")}
-        style={{
-          borderColor:
-            PlanType.planState === "Advanced" ? "#473dff" : "#d6d9e6",
-          backgroundColor:
-            PlanType.planState === "Advanced" ? "#f0f6ff" : "transparent",
-        }}
       >
         <input
           type="checkbox"
@@ -74,17 +80,15 @@ function Monthly() {
         </div>
       </label>
       <label
-        className={
-          PlanType.planState === "Pro" ? "user-plan" : "user-plan not-selected"
+        className={`user-plan${
+          validError.validationError
+            ? " not-validated"
+            : `${PlanType.planState === "Pro" ? " selected" : " not-selected"}`
         }
+        `}
         id="pro-plan"
         htmlFor="check-pro"
         onClick={(e) => handleLabelClick(e, "Pro")}
-        style={{
-          borderColor: PlanType.planState === "Pro" ? "#473dff" : "#d6d9e6",
-          backgroundColor:
-            PlanType.planState === "Pro" ? "#f0f6ff" : "transparent",
-        }}
       >
         <input
           type="checkbox"
@@ -102,5 +106,3 @@ function Monthly() {
     </section>
   );
 }
-
-export default memo(Monthly);
