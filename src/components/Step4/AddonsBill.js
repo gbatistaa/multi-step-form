@@ -15,7 +15,7 @@ function OnlineServiceBill({ periodicity }) {
       <div className="addons-bill-info">
         <p className="bill-name">Online Service</p>
         <p className="addons-price">
-          {periodicity === "Monthly" ? "+$1/mo" : "+$10/yr"}
+          {periodicity === "Monthly" ? "+$1/mo" : "+$12/yr"}
         </p>
       </div>
     );

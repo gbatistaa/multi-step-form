@@ -60,12 +60,6 @@ export default function Step1() {
       phone: phoneRef.current.value,
     };
 
-    console.log(
-      nameValidationError,
-      emailValidationError,
-      phoneValidationError
-    );
-
     validateUserPhone(userInfo.phone);
     validateUsername(userInfo.username);
     validateUserEmail(userInfo.email);

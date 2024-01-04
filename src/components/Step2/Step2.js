@@ -1,18 +1,32 @@
-import { useState, useContext, useRef } from "react";
+import { useState, useContext, useRef, createContext } from "react";
 import "../../css/Step2.css";
-import { StepContext } from "../App.js";
-import Monthly from "./Monthly.js";
+import { StepContext, PlanTypeContext } from "../App.js";
+import Monthly from "../Step2/Monthly.js";
 import { PeriodicContext } from "../App.js";
+
+const validationErrorContext = createContext();
 
 export default function Step2() {
   const isFirstRender = useRef(true);
   const [toggleAnimation, setToggleAnimation] = useState("");
+  const [validationError, setValidationError] = useState(false);
 
   const currentStep = useContext(StepContext);
   const periodic = useContext(PeriodicContext);
+  const planType = useContext(PlanTypeContext);
 
-  const handleSubmit = (event) => {
+  const handleSubmitError = (event) => {
     event.preventDefault();
+
+    if (planType.planState === "") {
+      setValidationError(true);
+      setTimeout(() => {
+        setValidationError(false);
+      }, 1001);
+    } else {
+      setValidationError(false);
+      currentStep.setStep(3);
+    }
   };
 
   const handleToggleChange = () => {
@@ -36,8 +50,15 @@ export default function Step2() {
       <p className="step-description">
         You have the option of monthly or yearly billing.
       </p>
-      <form className="plan-period-select" onSubmit={(e) => handleSubmit(e)}>
-        <Monthly />
+      <form
+        className="plan-period-select"
+        onSubmit={(e) => handleSubmitError(e)}
+      >
+        <validationErrorContext.Provider
+          value={{ validationError, setValidationError }}
+        >
+          <Monthly />
+        </validationErrorContext.Provider>
         <div className="monthly-yearly-selection">
           <p
             className="periodic-name"
@@ -76,15 +97,11 @@ export default function Step2() {
           <button
             className="go-back-button"
             type="button"
-            onClick={(e) => currentStep.setStep(1)}
+            onClick={() => currentStep.setStep(1)}
           >
             Go Back
           </button>
-          <button
-            className="next-step-button"
-            type="submit"
-            onClick={(e) => currentStep.setStep(3)}
-          >
+          <button className="next-step-button" type="submit">
             Next Step
           </button>
         </div>
@@ -92,3 +109,5 @@ export default function Step2() {
     </>
   );
 }
+
+export { validationErrorContext };
