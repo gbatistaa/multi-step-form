@@ -22,7 +22,7 @@ const addonsContexts = [
 export default function App() {
   const [planState, setPlanState] = useState("");
   const [periodicState, setPeriodicState] = useState("Monthly");
-  const [step, setStep] = useState(2);
+  const [step, setStep] = useState(1);
   const [onlineServiceState, setOnlineServiceState] = useState(false);
   const [largerStorageState, setLargeStorageState] = useState(false);
   const [customizableProfileState, setCustomizableProfileState] =
