@@ -7,6 +7,7 @@ import {
   CustomizableProfileContext,
 } from "./App.js";
 import "../css/Step3.css";
+import check from "../images/check-solid.svg";
 
 export default function Step3() {
   // Contexts:
@@ -49,7 +50,7 @@ export default function Step3() {
       <p className="step-description">
         Add-ons help enhance your gaming experience.
       </p>
-      <form onSubmit={(e) => handleSubmit(e)} className="form-3">
+      <form onSubmit={(e) => handleSubmit(e)} className="pick-addons-form">
         <div className="selection-div">
           <label
             className={`select-addons ${
@@ -68,11 +69,21 @@ export default function Step3() {
                 className={`pseudo-checkbox ${
                   onlineService.onlineServiceState ? "selected" : "not-selected"
                 }`}
-              ></div>
+              >
+                <img
+                  src={check}
+                  alt="check1"
+                  className={`check ${
+                    onlineService.onlineServiceState
+                      ? "displayed"
+                      : "not-displayed"
+                  }`}
+                />
+              </div>
             </div>
             <div className="addons-information">
               <p className="addons-name">Online service</p>
-              <p className="addons-descripttion">Access to multiplayer games</p>
+              <p className="addons-description">Access to multiplayer games</p>
             </div>
             <p className="additional-price-text">
               {planPeriod.periodicState === "Monthly" ? "+1$/mo" : "+12$/yr"}
@@ -95,11 +106,21 @@ export default function Step3() {
                 className={`pseudo-checkbox ${
                   largerStorage.largerStorageState ? "selected" : "not-selected"
                 }`}
-              ></div>
+              >
+                <img
+                  src={check}
+                  alt="check2"
+                  className={`check ${
+                    largerStorage.largerStorageState
+                      ? "displayed"
+                      : "not-displayed"
+                  }`}
+                />
+              </div>
             </div>
             <div className="addons-information">
               <p className="addons-name">Larger Storage</p>
-              <p className="addons-descripttion">Extra 1TB of cloud save</p>
+              <p className="addons-description">Extra 1TB of cloud save</p>
             </div>
             <p className="additional-price-text">
               {planPeriod.periodicState === "Monthly" ? "+2$/mo" : "+20$/yr"}
@@ -126,13 +147,21 @@ export default function Step3() {
                     ? "selected"
                     : "not-selected"
                 }`}
-              ></div>
+              >
+                <img
+                  src={check}
+                  alt="check3"
+                  className={`check ${
+                    customizableProfile.customizableProfileState
+                      ? "displayed"
+                      : "not-displayed"
+                  }`}
+                />
+              </div>
             </div>
             <div className="addons-information">
               <p className="addons-name">Customizable profile</p>
-              <p className="addons-descripttion">
-                Custom theme on your profile
-              </p>
+              <p className="addons-description">Custom theme on your profile</p>
             </div>
             <p className="additional-price-text">
               {planPeriod.periodicState === "Monthly" ? "+2$/mo" : "+20$/yr"}

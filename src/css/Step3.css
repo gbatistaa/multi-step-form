@@ -1,5 +1,6 @@
-form.form-3 {
+form.pick-addons-form {
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -50,9 +51,9 @@ div.addons-check-label {
 div.pseudo-checkbox {
     height: 25px;
     width: 25px;
-    padding-top: 5%;
     display: flex;
     justify-content: center;
+    align-items: center;
     border-radius: 4px;
     transition: 0.15s ease-out;
 }
@@ -66,8 +67,17 @@ div.pseudo-checkbox.selected {
     background-color: #473dff;
 }
 
-div.pseudo-checkbox.selected::after {
-    content: url(../images/check-solid.svg);
+img.check {
+    height: 18px;
+    width: 18px;
+}
+
+img.check.not-displayed {
+    display: none;
+}
+
+img.check.displayed {
+    display: inline;
 }
 
 div.addons-information {
@@ -85,7 +95,7 @@ p.addons-name {
     color: #02295a;
 }
 
-p.addons-descripttion {
+p.addons-description {
     font-family: 'Ubuntu';
     font-size: 0.95rem;
     color: #9699ab;
@@ -93,7 +103,6 @@ p.addons-descripttion {
 
 p.additional-price-text {
     color: #473dff;
-    ;
 }
 
 button.go-back-button {
@@ -106,4 +115,59 @@ div.buttons-div {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+@media screen and (max-width: 420px) and (min-width: 320px) {
+    label.select-addons {
+        padding: 0 4% 0 4%;
+        height: 70px;
+    }
+
+    div.addons-check-label {
+        height: 100%;
+        width: fit-content;
+        margin-right: 4%;
+    }
+
+    div.pseudo-checkbox {
+        height: 20px;
+        width: 20px;
+    }
+
+    img.check {
+        height: 14px;
+        width: 14px;
+    }
+
+    div.addons-information {
+        width: max-content;
+    }
+
+    p.addons-name {
+        width: fit-content;
+        font-size: 0.9rem;
+    }
+
+    p.addons-description {
+        width: fit-content;
+        font-size: 0.8rem;
+    }
+
+    p.additional-price-text {
+        margin-left: auto;
+        font-size: 0.95rem;
+    }
+
+    form.pick-addons-form {
+        display: flex;
+        height: 100%;
+    }
+
+    div.selection-div {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        margin-bottom: 40px;
+    }
 }

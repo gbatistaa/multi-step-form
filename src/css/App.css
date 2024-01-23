@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-main {
+main.main-sec {
     height: 90%;
     width: 65%;
     padding: 2.2%;
@@ -30,6 +30,43 @@ section#step-guide-container {
 section#plan-custom {
     display: flex;
     flex-direction: column;
+    height: 100%;
     width: 60%;
-    padding: 4%;
+}
+
+@media screen and (max-width: 420px) and (min-width: 320px) {
+    main.main-sec {
+        margin-top: 35%;
+        padding: 7%;
+        height: fit-content;
+        border-radius: 10px;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        column-gap: 5%;
+        row-gap: 0px;
+    }
+
+    section#step-guide-container {
+        width: 100%;
+        height: 30%;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 0 10%;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        border-radius: 0;
+        background-image: url(../images/bg-sidebar-mobile.svg);
+        background-position: 50% 100%;
+        background-size: cover;
+    }
+
+    section#plan-custom {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
 }

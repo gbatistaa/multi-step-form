@@ -83,7 +83,11 @@ p.plantype-period-name {
 }
 
 p.change-plan-settings {
+    height: fit-content;
+    width: fit-content;
     color: #9699ab;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 p.no-addons-bill {
@@ -111,4 +115,43 @@ div.buttons-div-four {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+@media screen and (max-width: 420px) and (min-width: 320px) {
+
+    p {
+        height: fit-content;
+    }
+
+    p.plantype-period-name {
+        font-size: 0.95rem;
+    }
+
+    p.no-addons-bill {
+        font-size: 1rem;
+    }
+
+    p.addons-price {
+        font-size: 1rem;
+    }
+
+    div.total-bill-div {
+        margin-top: 13%;
+    }
+
+    p.total-bill {
+        font-size: 1.2rem;
+    }
+
+    div.buttons-div-four {
+        margin-top: 13%;
+    }
+
+    button.next-step-button.button-4 {
+        background-color: #473dff;
+    }
+
+    button.next-step-button.button-4:hover {
+        background-color: #3d34db;
+    }
 }

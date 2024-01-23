@@ -76,7 +76,9 @@ export default function Step4() {
         <div className="periodic-bill-div">
           <div className="bill-names">
             <p className="plantype-period-name">{`${plantype.planState} (${periodBill.periodicState})`}</p>
-            <p className="change-plan-settings">Change</p>
+            <p className="change-plan-settings" onClick={() => step.setStep(2)}>
+              Change
+            </p>
           </div>
           <p className="no-addons-bill">
             ${calculateBruteBill()}/
@@ -109,7 +111,7 @@ export default function Step4() {
         </button>
         <button
           type="submit"
-          className="next-step-button"
+          className="next-step-button button-4"
           onClick={() => step.setStep(5)}
         >
           Confirm

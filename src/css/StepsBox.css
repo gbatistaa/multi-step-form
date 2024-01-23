@@ -39,3 +39,20 @@ div.step-name p:nth-child(2) {
     color: #fafbff;
     font-weight: 700;
 }
+
+@media screen and (max-width: 420px) and (min-width: 320px) {
+
+    div.step-name p:nth-child(1),
+    div.step-name p:nth-child(2) {
+        display: none;
+    }
+
+    div.step-number {
+        margin-top: 100%;
+        margin-right: 0;
+    }
+
+    div.step-info-box {
+        align-items: center;
+    }
+}

@@ -82,11 +82,11 @@ label.input-name.name::after {
 }
 
 label.input-name.email::after {
-    content: 'Email is not in the right format';
+    content: 'Wrong email format';
 }
 
 label.input-name.phone::after {
-    content: 'Phone number is not in the right format';
+    content: 'Wrong phone format';
 }
 
 input {
@@ -133,4 +133,19 @@ button.next-step-button {
 
 button.next-step-button:hover {
     background-color: #0f3f7a;
+}
+
+@media screen and (max-width: 420px) and (min-width: 320px) {
+    h1.main-title {
+        font-size: 1.7rem;
+        margin-bottom: 5%;
+    }
+
+    p.step-description {
+        font-size: 1.1rem;
+    }
+
+    label.input-name::after {
+        font-size: 0.8rem;
+    }
 }

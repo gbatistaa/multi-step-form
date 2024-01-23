@@ -20,3 +20,20 @@ p.final-description {
     line-height: 25px;
     color: #9699ab;
 }
+
+@media screen and (max-width: 420px) and (min-width: 320px) {
+    main.main-sec {
+        min-height: 375px;
+        padding: 6%;
+    }
+
+    p.final-description {
+        margin-top: 10px;
+        font-size: 1.01rem;
+        line-break: initial;
+    }
+
+    div.step5 {
+        padding: 0;
+    }
+}
