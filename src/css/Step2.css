@@ -145,7 +145,7 @@ div.monthly-yearly-selection label {
     cursor: pointer;
 }
 
-div.monthly-yearly-selection input {
+div.monthly-yearly-selection label input#periodic-toggle {
     height: 0;
     width: 0;
 }
