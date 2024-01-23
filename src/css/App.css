@@ -11,6 +11,8 @@ main.main-sec {
     padding: 2.2%;
     border-radius: 20px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
     column-gap: 10%;
     background-color: #ffffff;
