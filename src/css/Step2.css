@@ -83,8 +83,8 @@ label.user-plan {
 }
 
 label.user-plan input.check-plan {
-    height: 0;
-    width: 0;
+    height: 0px;
+    width: 0px;
 }
 
 label.user-plan.not-validated {
@@ -153,8 +153,8 @@ div.monthly-yearly-selection label {
 }
 
 div.monthly-yearly-selection label input#periodic-toggle {
-    height: 0;
-    width: 0;
+    height: 0px;
+    width: 0px;
 }
 
 label div.toggle-ball {
