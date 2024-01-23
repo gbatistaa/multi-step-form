@@ -82,6 +82,11 @@ label.user-plan {
     transition: 0.2s ease-out;
 }
 
+label.user-plan input.check-plan {
+    height: 0;
+    width: 0;
+}
+
 label.user-plan.not-validated {
     animation: notValidatedLabel 1s ease-out;
     border: 1.5px solid #d6d9e6;
@@ -133,6 +138,8 @@ div.monthly-yearly-selection {
     background-color: #f0f6ff;
     margin-bottom: 9.15%;
 }
+
+
 
 div.monthly-yearly-selection label {
     height: 40%;
