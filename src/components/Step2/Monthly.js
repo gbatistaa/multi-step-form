@@ -38,11 +38,7 @@ export default function Monthly() {
         htmlFor="check-arcade"
         onClick={(e) => handleLabelClick(e, "Arcade")}
       >
-        <input
-          type="checkbox"
-          style={{ height: "0px", width: "0px" }}
-          id="check-arcade"
-        />
+        <input type="checkbox" id="check-arcade" className="check-plan" />
         <img src={iconArcade} alt="" className="plan-icon" />
         <div className="plan-info-section">
           <h4 className="type-plan-title">Arcade</h4>
@@ -66,11 +62,7 @@ export default function Monthly() {
         htmlFor="check-advanced"
         onClick={(e) => handleLabelClick(e, "Advanced")}
       >
-        <input
-          type="checkbox"
-          style={{ height: "0px", width: "0px" }}
-          id="check-advanced"
-        />
+        <input type="checkbox" id="check-advanced" className="check-plan" />
         <img src={iconAdvanced} alt="" />
         <div className="plan-info-section">
           <h4 className="type-plan-title">Advanced</h4>
@@ -90,11 +82,7 @@ export default function Monthly() {
         htmlFor="check-pro"
         onClick={(e) => handleLabelClick(e, "Pro")}
       >
-        <input
-          type="checkbox"
-          style={{ height: "0px", width: "0px" }}
-          id="check-pro"
-        />
+        <input type="checkbox" id="check-pro" className="check-plan" />
         <img src={iconPro} alt="" />
         <div className="plan-info-section">
           <h4 className="type-plan-title">Pro</h4>
