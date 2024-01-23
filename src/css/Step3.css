@@ -35,8 +35,7 @@ label.select-addons.selected {
 }
 
 label.select-addons input {
-    height: 0;
-    width: 0;
+    display: none;
 }
 
 div.addons-check-label {
