@@ -135,7 +135,7 @@ button.next-step-button:hover {
     background-color: #0f3f7a;
 }
 
-@media screen and (max-width: 420px) and (min-width: 320px) {
+@media screen and (max-width: 440px) and (min-width: 320px) {
     h1.main-title {
         font-size: 1.7rem;
         margin-bottom: 5%;

@@ -33,7 +33,7 @@ footer.mobile-footer {
   display: none;
 }
 
-@media screen and (max-width: 420px) and (min-width: 320px) {
+@media screen and (max-width: 440px) and (min-width: 320px) {
   div#root {
     align-items: flex-start;
   }

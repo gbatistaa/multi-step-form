@@ -40,7 +40,7 @@ div.step-name p:nth-child(2) {
     font-weight: 700;
 }
 
-@media screen and (max-width: 420px) and (min-width: 320px) {
+@media screen and (max-width: 440px) and (min-width: 320px) {
 
     div.step-name p:nth-child(1),
     div.step-name p:nth-child(2) {

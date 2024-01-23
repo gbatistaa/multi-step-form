@@ -34,7 +34,7 @@ section#plan-custom {
     width: 60%;
 }
 
-@media screen and (max-width: 420px) and (min-width: 320px) {
+@media screen and (max-width: 440px) and (min-width: 320px) {
     main.main-sec {
         margin-top: 35%;
         padding: 7%;
