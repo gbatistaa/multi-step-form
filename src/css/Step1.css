@@ -82,7 +82,7 @@ label.input-name.name::after {
 }
 
 label.input-name.email::after {
-    content: 'Wrong email format';
+    content: 'Wrong email format ';
 }
 
 label.input-name.phone::after {

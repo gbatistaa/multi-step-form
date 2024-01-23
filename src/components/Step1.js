@@ -119,7 +119,7 @@ export default function Step1() {
           <input
             type="text"
             name="email"
-            placeholder="Here is your email"
+            placeholder="example@mail.com"
             autoComplete="off"
             ref={emailRef}
             className={emailValidationError ? "not-validated" : ""}
@@ -136,7 +136,7 @@ export default function Step1() {
           <input
             type="text"
             name="phone"
-            placeholder="And finally your phone"
+            placeholder="Ex: (00)123456789"
             autoComplete="off"
             ref={phoneRef}
             className={phoneValidationError ? "not-validated" : ""}
